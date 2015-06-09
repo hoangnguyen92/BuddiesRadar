@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editProfileLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/br_light_background"
+    tools:context="com.hoangnguyen.buddiesradar.activities.EditProfileActivity">
+
+    <com.parse.ParseImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_avatar"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivAvatar"
+        android:layout_alignTop="@+id/ivAvatar"
+        android:layout_toEndOf="@+id/ivAvatar"
+        android:layout_toRightOf="@+id/ivAvatar"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/room_name_vertical_margin">
+
+        <Button
+            android:id="@+id/btnTakePic"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_weight="1"
+            android:text="@string/cameraBtn" />
+
+        <View
+            android:id="@+id/vDivider"
+            android:layout_width="1dp"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/btnChangeAvatar"
+            style="@style/Button"
+            android:layout_width="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_weight="1"
+            android:text="@string/galeryBtn" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEdit"
+        style="@style/AuthEditFieldContainer"
+        android:layout_below="@+id/ivAvatar">
+
+        <EditText
+            android:id="@+id/etChangePassword"
+            style="@style/AuthEditText"
+            android:hint="@string/new_password_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/etConfirmPass"
+            style="@style/AuthEditText"
+            android:hint="@string/retype_new_password_hint"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/editChangeEmail"
+            style="@style/AuthEditText"
+            android:hint="@string/new_email_hint"
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSaveChanges"
+        style="@style/Button"
+        android:layout_below="@+id/llEdit"
+        android:text="@string/saveChangesBtn" />
+
+</RelativeLayout>

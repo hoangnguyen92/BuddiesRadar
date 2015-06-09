@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/br_light_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llEdit"
+        style="@style/AuthEditFieldContainer">
+
+        <EditText
+            android:id="@+id/etChangeRoomName"
+            style="@style/AuthEditText"
+            android:hint="@string/name_hint" />
+
+        <EditText
+            android:id="@+id/etChangePass"
+            style="@style/AuthEditText"
+            android:hint="@string/pass_key_hint" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnApplyChanges"
+        style="@style/Button"
+        android:text="@string/saveChangesBtn" />
+
+    <TextView
+        android:id="@+id/textMembers"
+        style="@style/HomeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/member_header_text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/srlRefresh">
+
+        <GridView
+            android:id="@+id/usersList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:columnWidth="60dp"
+            android:gravity="center"
+            android:horizontalSpacing="@dimen/user_grid_spacing"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="@dimen/user_grid_spacing" />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

@@ -1,0 +1,151 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity$PlaceholderFragment">
+
+    <com.parse.ParseImageView
+        android:id="@+id/pivBigAvatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_avatar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/pivBigAvatar"
+        android:layout_toRightOf="@+id/pivBigAvatar"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llFollower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFollowerCount"
+                style="@style/FollowCount" />
+
+            <TextView
+                android:id="@+id/tvFollowerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/followers_label"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFollowing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvFollowingCount"
+                style="@style/FollowCount" />
+
+            <TextView
+                android:id="@+id/tvFollowingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/following_label"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEditProfile"
+        style="@style/Button"
+        android:layout_alignBottom="@+id/pivBigAvatar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/pivBigAvatar"
+        android:layout_toRightOf="@+id/pivBigAvatar"
+        android:text="@string/edit_profile_label" />
+
+    <com.hoangnguyen.buddiesradar.views.FollowButton
+        style="@style/ToggleButton.Follow"
+        android:id="@+id/fbFollow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/pivBigAvatar"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_toEndOf="@+id/pivBigAvatar"
+        android:layout_toRightOf="@+id/pivBigAvatar"
+        android:visibility="invisible" />
+
+    <com.hoangnguyen.buddiesradar.views.RoomItem
+        android:id="@+id/riMyRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/riMyRoom"
+        android:layout_centerHorizontal="true"
+        android:text="@string/create_btn" />
+
+    <View
+        android:id="@+id/vDivider"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/riMyRoom"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnEditRoom"
+        style="@style/Button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/riMyRoom"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toLeftOf="@id/vDivider"
+        android:layout_toStartOf="@id/vDivider"
+        android:text="@string/edit_room_btn" />
+
+    <Button
+        android:id="@+id/btnDestroy"
+        style="@style/Button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/riMyRoom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_toEndOf="@id/vDivider"
+        android:layout_toRightOf="@id/vDivider"
+        android:text="@string/destroy_btn" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+</RelativeLayout>
